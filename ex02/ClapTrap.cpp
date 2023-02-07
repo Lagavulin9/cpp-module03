@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:45:11 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 15:46:56 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/07 15:33:58 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ClapTrap::attack(const std::string& target)
 	std::cout << "ClapTrap " << this->_name;
 	std::cout << " attacks " << target;
 	std::cout << " causing " << this->_attackDamage;
-	std::cout << " points of damage!" << std::endl;
+	std::cout << "points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -70,7 +70,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	this->_hitPoints -= amount;
 	std::cout << "ClapTrap " << this->_name;
 	std::cout << " took " << amount;
-	std::cout << " points of damage!" << std::endl;
+	std::cout << "points of damage!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -81,7 +81,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->_hitPoints += amount;
 	std::cout << "ClapTrap " << this->_name;
 	std::cout << " repaired " << amount;
-	std::cout << " points of hitPoints!" << std::endl;
+	std::cout << "points of hitPoints!" << std::endl;
 }
 
 const std::string&	ClapTrap::getName(void) const

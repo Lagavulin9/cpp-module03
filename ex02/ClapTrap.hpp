@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:38:09 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 14:55:03 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/07 15:50:09 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	ClapTrap(const ClapTrap&);
 	~ClapTrap();
 
-	ClapTrap&			operator=(const ClapTrap&);
+	ClapTrap&	operator=(const ClapTrap&);
 
 	void				attack(const std::string&);
 	void				takeDamage(unsigned int);

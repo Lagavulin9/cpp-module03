@@ -6,27 +6,20 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:44:51 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 16:16:18 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:12:12 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap A = ClapTrap("Bocchi");
-	ClapTrap B = ClapTrap("Nijika");
-	ClapTrap C = ClapTrap(B);
-	ClapTrap D = A;
+	DiamondTrap	A;
 
-	std::cout << A.getName() << std::endl;
-	std::cout << B.getName() << std::endl;
-	std::cout << C.getName() << std::endl;
-	std::cout << D.getName() << std::endl;
-	A.attack(B.getName());
-	B.takeDamage(A.getAttackDamage());
-	B.beRepaired(1);
-	std::cout << B.getEnergyPoints() << std::endl;
-	std::cout << B.getHitPoints() << std::endl;
+	A.whoAmI();
+	std::cout << A.FragTrap::getHitPoints() << std::endl;
+	std::cout << A.ScavTrap::getEnergyPoints() << std::endl;
+	std::cout << A.FragTrap::getAttackDamage() << std::endl;
+	A.ScavTrap::attack("A");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:44:51 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/23 20:21:07 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:10:38 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,24 @@ int	main(void)
 	ClapTrap C = ClapTrap(B);
 	ClapTrap D = A;
 
-	std::cout << "A getName(): " << A.getName() << std::endl;
-	std::cout << "B getName(): " << B.getName() << std::endl;
-	std::cout << "C getName(): " << C.getName() << std::endl;
-	std::cout << "D getName(): " << D.getName() << std::endl;
+	std::cout << "A Name: " << A.getName() << std::endl;
+	std::cout << "B Name: " << B.getName() << std::endl;
+	std::cout << "C Name: " << C.getName() << std::endl;
+	std::cout << "D Name: " << D.getName() << std::endl;
 	A.attack(B.getName());
 	B.takeDamage(A.getAttackDamage());
 	B.beRepaired(1);
-	std::cout << "B getEnergyPoints(): " << B.getEnergyPoints() << std::endl;
-	std::cout << "B getHitPoints(): " << B.getHitPoints() << std::endl;
+	std::cout << B.getName() << " EnergyPoints: " << B.getEnergyPoints() << std::endl;
+	std::cout << B.getName() << " HitPoints: " << B.getHitPoints() << std::endl;
+	A.setAttackDamage(10);
+	B.takeDamage(A.getAttackDamage());
+	B.beRepaired(1);
+	std::cout << B.getName() << " EnergyPoints: " << B.getEnergyPoints() << std::endl;
+	std::cout << B.getName() << " HitPoints: " << B.getHitPoints() << std::endl;
+	A.setAttackDamage(10);
+	B.takeDamage(A.getAttackDamage());
+	B.beRepaired(1);
+	std::cout << B.getName() << " EnergyPoints: " << B.getEnergyPoints() << std::endl;
+	std::cout << B.getName() << " HitPoints: " << B.getHitPoints() << std::endl;
 	return (0);
 }

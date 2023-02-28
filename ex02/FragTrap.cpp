@@ -6,13 +6,14 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:04:06 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 15:50:44 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/28 13:14:54 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap():
+	FragTrap::ClapTrap()
 {
 	this->setAttackDamage(30);
 	this->setEnergyPoints(100);
@@ -20,22 +21,19 @@ FragTrap::FragTrap()
 	std::cout << "FragTrap Constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string& name)
+FragTrap::FragTrap(const std::string& name):
+	FragTrap::ClapTrap(name)
 {
-	this->setName(name);
 	this->setAttackDamage(30);
 	this->setEnergyPoints(100);
 	this->setHitPoints(100);
 	std::cout << "FragTrap Constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& ref)
+FragTrap::FragTrap(const FragTrap& ref):
+	FragTrap::ClapTrap(ref)
 {
-	this->setAttackDamage(ref.getAttackDamage());
-	this->setEnergyPoints(ref.getEnergyPoints());
-	this->setHitPoints(ref.getHitPoints());
-	this->setName(ref.getName());
-	std::cout << "FragTrap Constructor called" << std::endl;
+	std::cout << "FragTrap Copy Constructor called" << std::endl;
 }
 
 FragTrap::~FragTrap()
@@ -45,6 +43,7 @@ FragTrap::~FragTrap()
 
 FragTrap&	FragTrap::operator=(const FragTrap& ref)
 {
+	std::cout << "FragTrap Copy Operator called" << std::endl;
 	this->setAttackDamage(ref.getAttackDamage());
 	this->setEnergyPoints(ref.getEnergyPoints());
 	this->setHitPoints(ref.getHitPoints());

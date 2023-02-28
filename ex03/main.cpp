@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 16:44:51 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 16:12:12 by jinholee         ###   ########.fr       */
+/*   Created: 2023/02/28 13:17:20 by jinholee          #+#    #+#             */
+/*   Updated: 2023/02/28 14:32:06 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 int	main(void)
 {
-	DiamondTrap	A;
+	DiamondTrap A("Seika");
 
 	A.whoAmI();
-	std::cout << A.FragTrap::getHitPoints() << std::endl;
-	std::cout << A.ScavTrap::getEnergyPoints() << std::endl;
-	std::cout << A.FragTrap::getAttackDamage() << std::endl;
-	A.ScavTrap::attack("A");
+	std::cout << "Hitpoint: " << A.getHitPoints() << std::endl;
+	std::cout << "EnergyPoint: " << A.getEnergyPoints() << std::endl;
+	std::cout << "AttackDamage: " << A.getAttackDamage() << std::endl;
 	return (0);
 }

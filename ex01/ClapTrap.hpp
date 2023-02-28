@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:38:09 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 14:54:53 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:44:37 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ public:
 	void				beRepaired(unsigned int);
 
 	void				setName(const std::string& name) { this->_name = name; };
-	void				setHitPoints(int n) { this->_hitPoints = n; };
-	void				setEnergyPoints(int n) { this->_energyPoints = n; };
-	void				setAttackDamage(int n) { this->_attackDamage = n; };
+	void				setHitPoints(int);
+	void				setEnergyPoints(int);
+	void				setAttackDamage(int);
 	const std::string&	getName(void) const;
 	int					getHitPoints(void) const;
 	int					getEnergyPoints(void) const;

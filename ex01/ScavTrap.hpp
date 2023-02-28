@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 20:38:12 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 14:55:48 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:03:17 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 class ScavTrap: public ClapTrap
 {
+protected:
+	static const int DEFAULT_HIT_POINT = 29;
 private:
 	
 public:

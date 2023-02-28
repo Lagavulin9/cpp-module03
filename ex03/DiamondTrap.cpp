@@ -6,22 +6,37 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:34:34 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 16:08:14 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/28 14:34:51 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap():
-	_name(this->getName())
+	DiamondTrap::ClapTrap(),
+	DiamondTrap::ScavTrap(),
+	DiamondTrap::FragTrap()
 {
 	std::cout << "DiamondTrap Constructor called" << std::endl;
+	std::string	clapname = ClapTrap::getName();
+	this->_name = clapname.append("_clap_name");
+	this->setHitPoints(FragTrap::getHitPoints());
+	this->setEnergyPoints(ScavTrap::getEnergyPoints());
+	this->setAttackDamage(FragTrap::getAttackDamage());
+
 }
 
 DiamondTrap::DiamondTrap(const std::string& name):
-	_name(name)
+	DiamondTrap::ClapTrap(name),
+	DiamondTrap::ScavTrap(name),
+	DiamondTrap::FragTrap(name)
 {
 	std::cout << "DiamondTrap Constructor called" << std::endl;
+	std::string	clapname = ClapTrap::getName();
+	this->_name = clapname.append("_clap_name");
+	this->setHitPoints(FragTrap::getHitPoints());
+	this->setEnergyPoints(ScavTrap::getEnergyPoints());
+	this->setAttackDamage(FragTrap::getAttackDamage());
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap&)

@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 20:55:01 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 15:59:13 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/02/26 20:47:33 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,10 @@ ScavTrap::ScavTrap(const std::string &name)
 	std::cout << "ScavTrap Constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& ref)
+ScavTrap::ScavTrap(const ScavTrap& ref):
+	ScavTrap::ClapTrap(ref)
 {
-	this->setAttackDamage(ref.getAttackDamage());
-	this->setEnergyPoints(ref.getEnergyPoints());
-	this->setHitPoints(ref.getHitPoints());
-	this->setName(ref.getName());
-	std::cout << "ScavTrap Constructor called" << std::endl;
+	std::cout << "ScavTrap Copy Constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
@@ -45,6 +42,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& ref)
 {
+	std::cout << "ScavTrap Copy Operator called" << std::endl;
 	this->setAttackDamage(ref.getAttackDamage());
 	this->setEnergyPoints(ref.getEnergyPoints());
 	this->setHitPoints(ref.getHitPoints());
@@ -54,5 +52,6 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& ref)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout<< "ScavTrap is now in Gate Keeper mode" << std::endl;
+	std::cout << "ScavTrap " << this->getName();
+	std::cout << " is now in Gate Keeper mode" << std::endl;
 }

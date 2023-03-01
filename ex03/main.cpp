@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:17:20 by jinholee          #+#    #+#             */
-/*   Updated: 2023/03/01 16:14:34 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:32:21 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	DiamondTrap A("Seika");
+	DiamondTrap A("A");
 
 	A.whoAmI();
 	std::cout << "Hitpoint: " << A.getHitPoints() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:44:51 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/24 11:10:38 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:26:35 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(void)
 {
-	ClapTrap A = ClapTrap("Bocchi");
-	ClapTrap B = ClapTrap("Nijika");
+	ClapTrap A = ClapTrap("A");
+	ClapTrap B = ClapTrap("B");
 	ClapTrap C = ClapTrap(B);
 	ClapTrap D = A;
 

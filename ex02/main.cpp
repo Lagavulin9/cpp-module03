@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:44:51 by jinholee          #+#    #+#             */
-/*   Updated: 2023/03/01 16:16:14 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:32:15 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	FragTrap E = FragTrap("Kita");
+	FragTrap E = FragTrap("F");
 	std::cout << "name: " << E.getName() << std::endl;
 	std::cout << "attackDamage: " << E.getAttackDamage() << std::endl;
 	std::cout << "energyPoint: " << E.getEnergyPoints() << std::endl;

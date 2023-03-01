@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:05:59 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/07 16:03:06 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:51:51 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 
 	DiamondTrap&	operator=(const DiamondTrap&);
 	void			whoAmI(void);
+	void			attack(const std::string&);
 };
 
 #endif

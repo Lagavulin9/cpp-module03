@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 20:38:12 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/28 18:03:17 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:26:12 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 class ScavTrap: public ClapTrap
 {
 protected:
-	static const int DEFAULT_HIT_POINT = 29;
+	static const int DEFAULT_HIT_POINT = 100;
+	static const int DEFAULT_ENERGY_POINT = 50;
+	static const int DEFAULT_ATTACK_DAMAGE = 20;
 private:
 	
 public:
@@ -30,6 +32,7 @@ public:
 
 	ScavTrap&	operator=(const ScavTrap&);
 	void		guardGate(void);
+	void		attack(const std::string&);
 };
 
 #endif

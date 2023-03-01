@@ -6,26 +6,27 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 20:55:01 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/26 20:47:33 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:30:32 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap():
+	ScavTrap::ClapTrap()
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->setHitPoints(ScavTrap::DEFAULT_HIT_POINT);
+	this->setEnergyPoints(ScavTrap::DEFAULT_ENERGY_POINT);
+	this->setAttackDamage(ScavTrap::DEFAULT_ATTACK_DAMAGE);
 	std::cout << "ScavTrap Constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name)
+ScavTrap::ScavTrap(const std::string &name):
+	ScavTrap::ClapTrap(name)
 {
-	this->setName(name);
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->setHitPoints(ScavTrap::DEFAULT_HIT_POINT);
+	this->setEnergyPoints(ScavTrap::DEFAULT_ENERGY_POINT);
+	this->setAttackDamage(ScavTrap::DEFAULT_ATTACK_DAMAGE);
 	std::cout << "ScavTrap Constructor called" << std::endl;
 }
 
@@ -54,4 +55,14 @@ void	ScavTrap::guardGate(void)
 {
 	std::cout << "ScavTrap " << this->getName();
 	std::cout << " is now in Gate Keeper mode" << std::endl;
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (!this->getHitPoints() || !this->getEnergyPoints())
+		return ;
+	std::cout << "ScavTrap " << this->getName();
+	std::cout << " attacks " << target;
+	std::cout << " causing " << this->getAttackDamage();
+	std::cout << " points of damage!" << std::endl;
 }

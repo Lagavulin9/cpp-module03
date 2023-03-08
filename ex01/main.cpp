@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:44:51 by jinholee          #+#    #+#             */
-/*   Updated: 2023/03/01 16:32:11 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:28:25 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 	std::cout << "attackDamage: " << E.getAttackDamage() << std::endl;
 	std::cout << "energyPoint: " << E.getEnergyPoints() << std::endl;
 	std::cout << "hitPoint: " << E.getHitPoints() << std::endl;
-	E.attack("Bocchi");
+	E.attack("Some random trap");
 	E.guardGate();
 
 	return (0);

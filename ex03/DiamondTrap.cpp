@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:34:34 by jinholee          #+#    #+#             */
-/*   Updated: 2023/03/01 16:12:29 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:21:27 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& ref)
 void	DiamondTrap::whoAmI(void)
 {
 	std::cout << this->_name << std::endl;
-	std::cout << this->ClapTrap::getName() << std::endl;
 }
 
 void	DiamondTrap::attack(const std::string& target)

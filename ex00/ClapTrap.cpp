@@ -6,37 +6,37 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:45:11 by jinholee          #+#    #+#             */
-/*   Updated: 2023/02/26 20:48:13 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:31:22 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap():
-	_name("Default Name"),
-	_hitPoints(10),
-	_energyPoints(10),
-	_attackDamage(0)
+ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap Constructor called" << std::endl;
+	this->_name = "Default Name";
+	this->_hitPoints = ClapTrap::DEFAULT_HIT_POINT;
+	this->_energyPoints = ClapTrap::DEFAULT_ENERGY_POINT;
+	this->_attackDamage = ClapTrap::DEFAULT_ATTACK_DAMAGE;
 }
 
-ClapTrap::ClapTrap(const std::string name):
-	_name(name),
-	_hitPoints(10),
-	_energyPoints(10),
-	_attackDamage(0)
+ClapTrap::ClapTrap(const std::string name)
 {
 	std::cout << "ClapTrap Constructor called" << std::endl;
+	this->_name = name;
+	this->_hitPoints = ClapTrap::DEFAULT_HIT_POINT;
+	this->_energyPoints = ClapTrap::DEFAULT_ENERGY_POINT;
+	this->_attackDamage = ClapTrap::DEFAULT_ATTACK_DAMAGE;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& ref):
-	_name(ref.getName()),
-	_hitPoints(ref.getHitPoints()),
-	_energyPoints(ref.getEnergyPoints()),
-	_attackDamage(ref.getAttackDamage())
+ClapTrap::ClapTrap(const ClapTrap& ref)
 {
 	std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	this->_name = ref._name;
+	this->_hitPoints = ref._hitPoints;
+	this->_energyPoints = ref._energyPoints;
+	this->_attackDamage = ref._attackDamage;
 }
 
 ClapTrap::~ClapTrap()
@@ -47,10 +47,10 @@ ClapTrap::~ClapTrap()
 ClapTrap&	ClapTrap::operator=(const ClapTrap& ref)
 {
 	std::cout << "ClapTrap Copy Assignment Operator called" << std::endl;
-	this->_name = ref.getName();
-	this->_hitPoints = ref.getHitPoints();
-	this->_energyPoints = ref.getEnergyPoints();
-	this->_attackDamage = ref.getAttackDamage();
+	this->_name = ref._name;
+	this->_hitPoints = ref._hitPoints;
+	this->_energyPoints = ref._energyPoints;
+	this->_attackDamage = ref._attackDamage;
 	return (*this);
 }
 
@@ -68,7 +68,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (!this->_hitPoints || !this->_energyPoints)
 		return ;
-	this->setHitPoints(this->_hitPoints - amount);
+	if (this->_hitPoints < amount)
+		amount = this->_hitPoints;
+	this->_hitPoints -= amount;
 	std::cout << "ClapTrap " << this->_name;
 	std::cout << " took " << amount;
 	std::cout << " points of damage!" << std::endl;
@@ -78,26 +80,34 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->_hitPoints || !this->_energyPoints)
 		return ;
-	this->setEnergyPoints(this->_energyPoints - 1);
-	this->setHitPoints(this->_hitPoints + amount);
+	this->_energyPoints -= 1;
+	if (this->_hitPoints + amount > UNSIGNED_INTMAX)
+		this->_hitPoints = UNSIGNED_INTMAX;
+	else
+		this->_hitPoints += amount;
 	std::cout << "ClapTrap " << this->_name;
 	std::cout << " repaired " << amount;
 	std::cout << " points of hitPoints!" << std::endl;
 }
 
-void	ClapTrap::setHitPoints(int n)
+void	ClapTrap::setName(const std::string& name)
 {
-	this->_hitPoints = n > 0 ? n : 0;
+	this->_name = name;
 }
 
-void	ClapTrap::setEnergyPoints(int n)
+void	ClapTrap::setHitPoints(unsigned int n)
 {
-	this->_energyPoints = n > 0 ? n : 0;
+	this->_hitPoints = n;
 }
 
-void	ClapTrap::setAttackDamage(int n)
+void	ClapTrap::setEnergyPoints(unsigned int n)
 {
-	this->_attackDamage = n > 0 ? n : 0;
+	this->_energyPoints = n;
+}
+
+void	ClapTrap::setAttackDamage(unsigned int n)
+{
+	this->_attackDamage = n;
 }
 
 const std::string&	ClapTrap::getName(void) const

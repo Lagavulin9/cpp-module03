@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 20:38:12 by jinholee          #+#    #+#             */
-/*   Updated: 2023/03/01 15:26:12 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:35:04 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 	~ScavTrap();
 
 	ScavTrap&	operator=(const ScavTrap&);
+
 	void		guardGate(void);
 	void		attack(const std::string&);
 };

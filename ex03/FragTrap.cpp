@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:04:06 by jinholee          #+#    #+#             */
-/*   Updated: 2023/03/01 15:41:07 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:35:57 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 FragTrap::FragTrap():
 	FragTrap::ClapTrap()
 {
-	this->setHitPoints(FragTrap::DEFAULT_HIT_POINT);
-	this->setEnergyPoints(FragTrap::DEFAULT_ENERGY_POINT);
-	this->setAttackDamage(FragTrap::DEFAULT_ATTACK_DAMAGE);
 	std::cout << "FragTrap Constructor called" << std::endl;
+	this->_hitPoints = FragTrap::DEFAULT_HIT_POINT;
+	this->_energyPoints = FragTrap::DEFAULT_ENERGY_POINT;
+	this->_attackDamage = FragTrap::DEFAULT_ATTACK_DAMAGE;
 }
 
-FragTrap::FragTrap(const std::string& name):
+FragTrap::FragTrap(const std::string &name):
 	FragTrap::ClapTrap(name)
 {
-	this->setHitPoints(FragTrap::DEFAULT_HIT_POINT);
-	this->setEnergyPoints(FragTrap::DEFAULT_ENERGY_POINT);
-	this->setAttackDamage(FragTrap::DEFAULT_ATTACK_DAMAGE);
 	std::cout << "FragTrap Constructor called" << std::endl;
+	this->_hitPoints = FragTrap::DEFAULT_HIT_POINT;
+	this->_energyPoints = FragTrap::DEFAULT_ENERGY_POINT;
+	this->_attackDamage = FragTrap::DEFAULT_ATTACK_DAMAGE;
 }
 
 FragTrap::FragTrap(const FragTrap& ref):
@@ -44,10 +44,10 @@ FragTrap::~FragTrap()
 FragTrap&	FragTrap::operator=(const FragTrap& ref)
 {
 	std::cout << "FragTrap Copy Operator called" << std::endl;
-	this->setAttackDamage(ref.getAttackDamage());
-	this->setEnergyPoints(ref.getEnergyPoints());
-	this->setHitPoints(ref.getHitPoints());
-	this->setName(ref.getName());
+	this->_name = ref._name;
+	this->_hitPoints = ref._hitPoints;
+	this->_energyPoints = ref._energyPoints;
+	this->_attackDamage = ref._attackDamage;
 	return (*this);
 }
 
@@ -58,10 +58,10 @@ void	FragTrap::highFivesGuys(void)
 
 void	FragTrap::attack(const std::string& target)
 {
-	if (!this->getHitPoints() || !this->getEnergyPoints())
+	if (!this->_hitPoints || !this->_energyPoints)
 		return ;
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "FragTrap " << this->_name;
 	std::cout << " attacks " << target;
-	std::cout << " causing " << this->getAttackDamage();
+	std::cout << " causing " << this->_attackDamage;
 	std::cout << " points of damage!" << std::endl;
 }

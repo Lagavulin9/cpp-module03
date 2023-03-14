@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:34:34 by jinholee          #+#    #+#             */
-/*   Updated: 2023/03/08 18:37:48 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:11:23 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ DiamondTrap::DiamondTrap():
 {
 	std::cout << "DiamondTrap Constructor called" << std::endl;
 	std::string	clapname = ClapTrap::getName();
-	this->_name = clapname.append("_clap_name");
+	ClapTrap::_name = clapname.append("_clap_name");
+	this->_name = "Default Name";
 	this->setHitPoints(FragTrap::DEFAULT_HIT_POINT);
 	this->setEnergyPoints(ScavTrap::DEFAULT_ENERGY_POINT);
 	this->setAttackDamage(FragTrap::DEFAULT_ATTACK_DAMAGE);
@@ -32,7 +33,8 @@ DiamondTrap::DiamondTrap(const std::string& name):
 {
 	std::cout << "DiamondTrap Constructor called" << std::endl;
 	std::string	clapname = ClapTrap::getName();
-	this->_name = clapname.append("_clap_name");
+	ClapTrap::_name = clapname.append("_clap_name");
+	this->_name = name;
 	this->setHitPoints(FragTrap::DEFAULT_HIT_POINT);
 	this->setEnergyPoints(ScavTrap::DEFAULT_ENERGY_POINT);
 	this->setAttackDamage(FragTrap::DEFAULT_ATTACK_DAMAGE);
@@ -59,8 +61,8 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& ref)
 
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << this->_name << std::endl;
-	std::cout << this->ClapTrap::_name << std::endl;
+	std::cout << "DiamondTrap Name: " << this->_name << std::endl;
+	std::cout << "Clap Name: " << this->ClapTrap::_name << std::endl;
 }
 
 void	DiamondTrap::attack(const std::string& target)

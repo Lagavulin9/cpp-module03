@@ -6,7 +6,7 @@
 /*   By: jinholee <jinholee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:45:11 by jinholee          #+#    #+#             */
-/*   Updated: 2023/03/08 18:31:22 by jinholee         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:20:11 by jinholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,13 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	long	repaired;
+
 	if (!this->_hitPoints || !this->_energyPoints)
 		return ;
 	this->_energyPoints -= 1;
-	if (this->_hitPoints + amount > UNSIGNED_INTMAX)
+	repaired = this->_hitPoints + amount;
+	if (repaired > UNSIGNED_INTMAX)
 		this->_hitPoints = UNSIGNED_INTMAX;
 	else
 		this->_hitPoints += amount;
